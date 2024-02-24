@@ -1,0 +1,41 @@
+/*
+ CSS: Cascating Style Sheet 
+Código para criar estilos no HTML
+- html é a estrutua, css é a beleza
+- não é uma linguagem de programação: é uma linguagem style sheet
+
+
+h1 {
+    color: mediumvioletred;
+    font-size: 60px;
+    background-color: bisque;
+} */
+ 
+/* -Selector: Diz em qual tag do HTML serão aplicadas as propriedades listadas em seguida (aplicará em todas as tags repetidas)
+   -Declaration: Declaração de css (conjunto de propriedades e valores: oq será feito)
+   -Properties: Propriedades (quanto mais propriedades souber, mais coisas da para mudar e estilizar)
+   -Property Value: Valor de uma determinada propriedade */
+   
+   /* ID selector 
+     -width: comprimento*/
+#container {
+	width: 200px;
+}
+
+/* Class selector 
+   -margin: margem*/
+.m-40 {
+	margin: 40px;
+}
+
+/* Element/Type selector + Agrupamento de seletores */
+h1, h2 {
+	color: blue;
+	font-size: 60px;
+	background: gray;
+}
+
+
+/* Os seletores são o que conectam um elemento HTML com o CSS, existem vários tipos, inclusive, nós vimos um na última aula,
+o Element/Type selector, mas também temos o seletor global, que é um * (asterisco), ID selector, que é # (cerquilha, cardinal) e
+o ID do elemento HTML, class selector, que é um . (ponto) e o nome da classe, e mais alguns que podemos entender mais tarde no curso. */

@@ -1,0 +1,129 @@
+ <!-- Semântica -->
+
+<!--Títulos e Parágrafos-->
+<h1> Sobre Mim </h1>
+<p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur porro nihil magnam consequatur modi corporis odit laudantium possimus voluptatem! Doloribus qui aut voluptas dolor officiis. Neque rerum ut illo laudantium.</p>
+
+<h2> Juventude: </h2>
+<h3> Infânca </h3>
+<p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora similique exercitationem quibusdam culpa perferendis reiciendis tenetur voluptas odio qui, facilis mollitia nostrum nisi nemo reprehenderit quaerat voluptates enim? Placeat, perspiciatis?</p>
+<h3>Adolescencia</h3>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam porro ducimus fugiat ipsam veniam sequi. Quasi, autem molestiae. Omnis amet id quidem est deserunt ea. Quae libero cupiditate consectetur ipsa.</p>
+
+<h2>Trabalho:</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum ratione eveniet debitis rem minima delectus ex adipisci et dolore corrupti! Inventore eum laudantium saepe placeat beatae veniam necessitatibus illum facere!</p>
+<a href="https://google.com">Saiba mais</a>
+
+<p>____________________________________________________</p>
+
+<!-- Listas 
+    -Ordenadas: usar <ol>
+    -Nao ordenadas: usar <ul> -->
+
+<h1>Suco detox</h1>
+
+<h2>Ingredientes:</h2>
+
+<ul><li>3 folhas de couve</li>
+    <li>1 laranja</li>
+    <li>1 pedacinho de gengibre</li>
+    <li>300ml de água</li>
+</ul>
+
+
+<p>______________________________________________________</p>
+
+<!--Citações-->
+
+<blockquote cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote">
+    O <strong>Elemento HTML <code>&lt;blockquote&gt;</code> </strong> (ou <em>HTML Block
+    Quotation Element</em>) indica que um texto externo foi citado.
+</blockquote>
+
+<p>De acordo com <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote">
+    <cite>página MDN blockquote</cite></a>:
+</p>
+
+<p>O elemento quote — <code>&lt;q&gt;</code> — é <q cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q">usado para citações curtas que não precisam de parágrafos ou quebras de linha.</q> -- <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q">
+<cite>MDN q page</cite></a>.</p>
+
+<p> ________________________________________________________</p>
+
+<!-- Abreviaçoes 
+     <abbr> 
+    faz aparecer o significado da abreviação quando descansar o mouse sobre ela-->
+
+    <p>Usamos <abbr title="Hypertext Markup Language">HTML</abbr>  para estruturar nossos documentos da web.</p>
+
+    <p> ________________________________________________________</p>
+
+    <!-- Detalhes de contato 
+         <adress>
+        detalhes da pessoa que escreveu o HTML (quem é o autor e seu contato)-->
+        <address>
+            <p> Iasmin Torres <br>
+            <strong>Diamantina, MG</strong>
+            </p>
+        </address>
+
+        <p> ________________________________________________________</p>
+
+<!-- Listas de descrição 
+     <dl>
+         <dt></dt>
+        <dd></dd>
+     </dl>
+    Servem para marcar um conjunto de intens e suas descrições.
+    -->
+    <h2> Glossário </h2>
+    <dl>
+        <dt> <strong> Hypertext </strong></dt>
+        <dd>É um hiper texto com possibilidades...</dd>
+
+        <dt> <strong>Markup</strong></dt>
+        <dd>Marcação do texto</dd>
+
+        <dt><strong>Language</strong></dt>
+        <dd>Linguagem com semântica e sintaxe...</dd>
+    </dl>
+
+    <p> ________________________________________________________</p>
+
+    
+<!-- Representando códigos do computador: 
+    <code>
+        Partes genéricas de código (algo pequeno). Mostra que é um código.
+    <pre>
+        Blocos de código, pois essa tag mantém os espaços em
+        brancos e recuos que eu colocar no meu código.
+    -Como representar códigos HTML dentro do próprio HTML, para aparecer no browser.    -->
+
+   <pre>
+       <code>
+           document
+             .querySelector("body")
+       </code>
+   </pre>
+
+    <pre>
+        <code>
+            &lt;pre>&lt;/pre>
+        </code>
+    </pre>
+   
+
+    <p> ________________________________________________________</p>
+
+<!--Elementos genéricos
+    *<div> : agrupar conteúdos (trabalha com a ideia de bloco)
+    *<pan> : agrupar textos (trabalha com a ideia de linha, mantém o texto em linha) -->
+
+   <div>
+       Um texto qualquer
+       <span>outro</span> <span>texto</span>
+   </div>     
+  
+   <div class="cart">
+    <span>Camiseta</span>
+    <span>r$ 99,00</span>
+</div> 

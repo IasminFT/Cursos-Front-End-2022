@@ -1,0 +1,187 @@
+/* 
+# # Trabalhando com fontes
+
+    Tipografia transmite mensagem 
+        -negrito
+        -tamanho 
+        -estilo
+
+
+
+# # Basic Font Properties:
+    * font-family
+    * font-weight
+    * font-style
+    * font-size
+
+*/
+
+/* FONT FAMILY
+        - Tipo de fonte de um elemento
+        - Lista de fontes e ordem de prioridade
+        - Inclui *fallback* font (escape caso o caminho não dê certo)
+            ex: procurar por "Times New Roman", se não encontrar, procurar por Times, caso não tenha também, 
+            procurar por fonte serifada.*/
+p{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* FONT WEIGHT
+        -Peso da fonte
+        -Normal, Bold, Bolder, Lighter e Numéricos (100, 200, 300, 400, 500, 600, 700, 800, 900)
+        -Valor inicial: Fonte normal (100)
+        -Dependendo da Família da fonte, não é possivel acessar todos os pesos.*/
+p{
+    font-weight: bold;
+}
+
+/* FONT STYLE
+        -O estilo da fonte
+        -Italic, Oblique, Normal
+        -Valor inicial: normal
+        -Nem todas as famílias aceitam o Italic ou Oblique*/
+p{
+    font-style: italic;
+}
+
+/* FONT SIZE
+        -Tamanho da fonte
+        -<lenght>*/
+p{
+    font-size: 1.3em;
+}
+
+
+/* # # Web Fonts 
+    -Fontes do sistema: fontes que estão instaladas na minha máquina (nem sempre vão estar instaladas na máquina do cliente).
+        Deve transformá-las em Fontes da Web
+    -Fontes da web: 
+        * @font-face
+        * @import
+        * link (maneira mais rápida para leitura): fica no head do HTML
+
+    -Referências (onde encontrar fontes específicas para a página)
+        https://css-tricks.com/snippets/css/using-font-face-in-css/
+        https://fonts.google.com/
+
+    → Como usar: primeiro deve-se colocar o link da fonte no head do HTML,
+     ex:
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@200&display=swap" rel="stylesheet">
+    
+     e então escrever a regra da fonte no CSS:
+*/
+p{
+    font-family: 'Smooch Sans', sans-serif;
+}
+
+
+/* 
+    ATRIBUINDO MAIS ESTILOS ÀS FONTES:
+        -https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Fundamentals
+
+        * font-variant
+            -Faz variações na apresentação da fonte
+            
+            -https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant */
+            p {
+                font-variant: small-caps;
+            }
+
+/*      * font-stretch 
+            -Alargamento ou encolhimento da fonte
+            -Aceita palavras-chaves como: expanded, condensed, normal
+            -Aceita porcentagens de 50% a 200%
+            -Essa propriedade não vai funcionar em todas as fontes
+            
+            -https://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch */
+            p {
+                font-stretch: expanded;
+            }
+
+/*      * letter-spacing
+            -Define o espaçamento entre os caracteres (letras)
+            -<length>
+            
+            -https://developer.mozilla.org/en-US/docs/Web/CSS/letter-spacing */
+            p {
+                letter-spacing: 4px;
+            }
+
+/*      * word-spacing
+            -Define o espaçamento entre palavras
+            -<length>
+
+            -https://developer.mozilla.org/en-US/docs/Web/CSS/word-spacing */
+            p {
+                word-spacing: 1em;
+            }
+
+/*      * line-height
+            -Define os espaços entre linhas
+            -Pode ser com unidades ou sem unidades de medida
+            -Valores comuns: 1.5 ou 2
+
+            -https://developer.mozilla.org/en-US/docs/Web/CSS/line-height */
+            p {
+                line-height: 1.5;
+            }
+
+/*      * text-transform
+            -Transformação do texto
+            -Valores podem ser: 
+                . none (não aplicar)
+                . capitalize (todas as letras iniciais maiúsculas)
+                . uppercase (todas as letras maiúsculas)
+                . lowercase (todas as letras minúsculas)
+                . full-width
+                . full-size-kana
+
+            -https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform */
+            p {
+                text-transform: uppercase;
+            }
+
+/*       * text-decoration
+            -Aparência decorativa de um texto
+            -Line: underline (sublinhado) | overline (linha acima) | line-through (linha que corta ao meio)
+                (podemos aplicar mais de 1 valor)
+            -Style: wavy | dotted | double | dashed | solid
+            -Color: <color> values 
+            
+            -https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration */
+            h1 {
+                text-decoration: underline; /* shorthand */
+            }
+            
+            p {
+              text-decoration: wavy overline blue; /* shorthand */
+            }
+
+/*       * text-align
+            -Alinhamento de um texto
+            -Valores: start | end | left | right | center | justify | match-parent
+
+            -https://developer.mozilla.org/en-US/docs/Web/CSS/text-align */
+            p {
+                text-align: center;
+            }
+
+/*       * text-shadow
+            -Sombra aplicada a um texto
+            -Permite múltiplos valores: 3 primeiros do tipo <length> (x, y e blur) e o último para coloração
+            
+            -https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow */
+            p {
+                text-shadow: 1px 1px 1px red,
+                         2px 2px 1px green; /* offset-x | offset-y | blur-radius | color */
+              }
+
+
+/* SHORTHAND
+    Podemos usar o shorthand font para determinar os seguintes valores: font-style, font-variant, font-weight,
+    font-stretch, font-size, line-height e font-family */
+p {
+    font: italic normal bold normal 3em/1.5 Helvetica, Arial, sans-serif;
+} /* font-size e line-height separados por uma barra '/' */

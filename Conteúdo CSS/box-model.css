@@ -1,0 +1,129 @@
+    /* BOX MODEL: caixas retangulares
+    
+    Propriedades:   - Width (largura)
+                    - Height (altura)s
+                    - Content (conteúdo)
+                    - Border (borda)
+                    - Padding (preenchimento interno)
+                    - Margin (Espaços fora da caixa)
+
+    Quase todo elemento de uma página é considerado uma caixa: Posicionamento, Tamanhos,
+    Espaçamentos, Bordas, Cores
+    Elementos HTML são caixas, assim como quase tudo no CSS.
+    */
+
+    h1{ 
+        width: 100px;
+        height: auto;                                   
+        border: 1px solid red;                            
+        margin: 20px;
+        padding: 60px;
+    }
+
+/* ------------------------------------------------------------------------------------------- */
+
+    /* BOX SIZING 
+        
+        Como será calculado o tamanho total da caixa?
+            - content-box  (os pixels sao adicionados a partir do conteúdo da caixa)
+            - border-box (os pixels sao adicionados a partir da borda: o tamanho estabelecido no "width" nao se altera)
+
+            div{
+            box-sizing: border-box;
+            }
+    */
+
+    .mensagem{
+        width: 100px;
+        height: 50px;
+        border: 3px solid rebeccapurple;
+        margin: 100px;
+        padding: 10px 20px;
+        color: purple;
+    }
+
+/* ------------------------------------------------------------------------------------------- */
+
+    /* display: block  vs  display: inline 
+        -Display = apresentação das caixas
+        -Como as caixas se comportam em relação às outras caixas
+        -Comportamento externo das caixas (uma em cima e outra embaixo, ou uma ao lado da outra, etc)
+        
+    >>BLOCK
+        Ocupa toda a linha, colocando o próximo elemento abaixo desse (a maioria é block)
+        Width e Height são respeitados
+        Padding, Border e Margin vão funcionar normalmente
+        <p> <div> <section>, todos os headings <h1> <h2>...
+    >>INLINE
+        Elemento ao lado do outro
+        Width e Height nào funcionam
+        Somente valores horizontais de Margin, Padding e Border
+        */
+
+/* ------------------------------------------------------------------------------------------- */
+
+
+    /* MARGIN
+        Espaços entre os elementos
+        >> margin-top - margin-right - margin-bottom - margin-left
+        >> values: <length> - <percentage> - auto */
+    div{
+        margin: 12px 16px 10px 4px; /* TOP = 12px | RIGHT = 16px | BOTTOM = 10px | LEFT = 4px */
+        margin: 12px 16px 0; /* TOP = 12px | RIGHT = 16px | BOTTOM = 0px | LEFT = 16px */
+        margin: 8px 16px; /* TOP = 8px | RIGHT = 16px | BOTTOM = 8px | LEFT = 16px */
+        margin: 8px; /* TOP = 8px | RIGHT = 8px | BOTTOM = 8px | LEFT = 8px */
+    }
+    /* Por padrão, para eliminar as margens automáticas que o navegaor coloca (usualmente de 8px), utilizar: */
+        *{ margin: 0; } 
+    /*Cuidado com o margin collapsing que é quando o top se junta ao bottom (Só ocorre com elementos em block.
+        Quando estão inline, os valores da margem das laterais se somam)*/
+
+
+/* ------------------------------------------------------------------------------------------- */
+
+
+    /* PADDING
+        Preenchimento interno da caixa
+        >> padding-top - padding-right - padding-bottom - padding-left
+        >> values: <length> - <percentage> */
+    div{ 
+        padding: 12px 16px 10px 4px; /* TOP = 12px | RIGHT = 16px | BOTTOM = 10px | LEFT = 4px */
+        padding: 12px 16px 0; /* TOP = 12px | RIGHT = 16px | BOTTOM = 0px | LEFT = 16px */
+        padding: 8px 16px; /* TOP = 8px | RIGHT = 16px | BOTTOM = 8px | LEFT = 16px */
+        padding: 8px; /* TOP = 8px | RIGHT = 8px | BOTTOM = 8px | LEFT = 8px */
+     }
+     /*Padding poderá causar diferença na largura de um elemento*/
+
+/* ------------------------------------------------------------------------------------------- */
+
+    /* BORDER (e outline)
+        As bordas da caixa
+        >> value: <border-style> - <border-width> - <border-color>
+        - style: solid, dotted, dashed, double, groove, ridge, inset, outset
+        - width: <length>
+        - color: <color>
+    */
+    div {
+            /* style */
+        border: solid;
+
+        /* width | style */
+        border: 2px dotted;
+
+        /* style | color */
+        border: outset #f33;
+
+        /* width | style | color */
+        border: medium dashed green;
+
+        /* Global values */
+        border: inherit;
+        border: initial;
+        border: unset;
+    }
+    /* OUTLINE
+        O outline é muito semelhante ao border, mas difere em 4 sentidos:
+        -Não modifica o tamanho da caixa, pois não é parte do Box Model (fica por fora)
+        -Poderá ser diferente de retangular
+        -Não permite ajuste individuais
+        -Mais usado pelo user agent para acessibilidade

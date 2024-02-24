@@ -1,0 +1,139 @@
+/* 
+    Page Layouts
+    
+    - Tables
+    - Floats e Clear (elementos flutuantes, o clear fazia parar de flutuar e nao atrapalhar outros elementos)
+    - Frame works e Grid Systems (linhas e colunas dividiam a tela em "pedaços" onde podiam colocar os elementos)
+    - Flexbox
+    - Grid
+*/
+
+/*  POSICIONAMENTOS 
+    Controlar onde, na pagina, o elemento irá ficar, alterando o fluxo normal dos elementos (um abaixo do outro 
+    se for do tipo block, ou um ao lado do outro, se for do tipo inline)
+
+    -Name: position
+    -Value: static - relative - absolute - fixed
+        -Static >> é o padrão (fluxo normal)
+        -Relative >> tem 5 propriedades: top, right, bottom, left e z-index (modifica apenas o posicionamento daquela caixa em específico)
+        -Absolute >> tem 5 propriedades: top, right, bottom, left e z-index (é como se a caixa que teve seu posicionamento 
+            modificado fosse para um outro fluxo, e as outras ocupam o local inicial da primeira, como se fosse eliminado 
+            o espaço inicial -padrão- da caixa modificada: pode inclusive se sobrepor às outras caixas): é relativo à página inteira
+        -Fixed >> o elemento também sai do contexto e fica fixo na página (por mais que os outros elementos se mexam com o scroll,
+            ele permanece no mesmo local, sobrepondo-os). Também tem 5 propriedades: top, right, bottom, left e z-index.
+*/
+
+.box{
+    width: 50px;
+    height: 50px;
+    margin-bottom: 8px;
+}
+
+.box1{
+    background-color: red;
+    position: relative;
+    left: 100px;
+    top: 80px;
+}
+
+.box2{
+    background-color: green;
+    position: absolute;
+    bottom: 50px;
+    right: 0;
+}
+
+.box3{
+    background-color: green;
+    position: fixed;
+    top: 50px;
+}
+
+/* Element Stacking
+    Empilhamento de elementos (divide em camadas)
+        -utiliza-se do z-index, que representa essa terceira dimensão (eixo z) 
+        -quanto maior o valor do z-index, mais exterior é a camada do elemento
+*/
+
+
+/* FLEXBOX
+    -Nos permite posicionar os elementos dentro da caixa
+    -Controle em uma dimensao (horizontal ou vertical), sabendo q o padrão do html é a vertical
+    -Alinhamento, direcionamento, ordenar itens e modificar tamanhos
+*/
+div.parent{
+    display: flex;
+}
+
+/* 
+>flex-direction
+    -qual a direção do flex: horizontal ou vertical
+    -row (uma ao lado da outra)
+    -collum (uma em cima da outra)
+    -ao colocar apenas  display:flex  , um elemento se colocará ao lado do outro, automaticamente
+
+>alinhamento
+    -justify-content: space-between(espaço entre elementos), center(juntos ao centro horizontal)
+    -align-items: center (alinhar os elementos sempre no meio vertical da página)
+*/
+body {
+    height: 100vh;
+    margin: 0;
+
+    display: flex;
+
+    align-items: center;
+}
+
+.container{
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+}
+
+/* GRID
+    -Posicionamento de elementos dentro da caixa
+    -Posicionamento horizontal e vertical ao mesmo tempo
+    -Pode ser flexível ou fixo
+    -Cria espaços para os elementos filhos
+*/
+body{
+    margin: 0;
+    height: 100vh;
+    
+    display: grid;
+    grid-template-areas:
+    "header header"
+    "main aside"
+    "footer footer";
+    grid-template-rows: 30px 1fr 40px;
+    grid-template-columns: 1fr 80px;
+}
+
+/* 1fr: mantém o meio flexível */
+
+header{
+    grid-area:header;
+    background-color: green;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8px;
+}
+
+main{
+    grid-area: main;
+    background-color: gray;
+}
+
+aside{
+    grid-area: aside;
+    background-color: red;
+}
+
+footer{
+    grid-area: footer;
+    background-color: blue;
+}

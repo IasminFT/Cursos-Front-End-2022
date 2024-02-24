@@ -1,0 +1,237 @@
+<!-- VIDEO
+
+    <video>
+    
+    -src
+    -controls
+-->
+<video src="./files/VALORANT   2021-11-10 19-34-54.mp4" controls></video>
+
+<!-- Se não funcionar:
+        fallback content -->
+
+        <video src="./files/VALORANT   2021-11-10 19-34-54.mp4" controls>
+            <p>Este browser nao suporta vídeo, baixeo aqui <a href="">link</a></p>
+        </video>
+
+
+    <!-- Se ainda não funcionar:
+        
+        -source
+            -src
+            -type -->
+        
+            <video controls>
+                <source src="./files/VALORANT   2021-11-10 19-34-54.mp4" type="video/mp4">
+                <p>Este browser nao suporta vídeo, baixeo aqui <a href="">link</a></p>
+            </video>
+
+
+<!-- Configurações do vídeo (controls) -->
+<video controls
+    width="500"
+    height="400"
+    autoplay
+    preload="auto"
+    loop
+    muted
+    poster="./files/valorant.jpg"
+>
+    
+    <source src="./files/VALORANT   2021-11-10 19-34-54.mp4" type="video/mp4">
+    <p>Este browser nao suporta vídeo, baixeo aqui <a href="">link</a></p>
+</video>
+ 
+<!--autoplay: vídeo se iniciar automaticamente (depende do navegador)
+    preload: o vídeo ja vai baixando assim que a pagina carrega (auto), ou só carrega o básico para entender sobre o vídeo (metadata), ou só carrega após apertar o botão (none)
+    loop: se chegar ao final do vídeo, o vídeo tocará mais uma vez
+    muted: se o vídeo deverá começar mutado
+    poster: imagem que aparecerá antes do vídeo ser rodado
+-->
+
+<p>___________________________________________________________________________________________________</p>
+
+
+<!-- AUDIO
+
+    <audio>
+
+    -src
+    -controls
+
+    Se não funcionar:
+        -fallback content
+        -source
+            -src
+            -type
+-->
+    <audio controls
+        autoplay
+        loop   
+    >
+        <source src="./files/howl's-moving-castle.mp3"
+            type="audio/mp3">
+        <source src="./files/howl's-moving-castle.ogg"
+            type="audio/ogg">
+        <p>Seu navegador não suporta audio</p>
+    </audio>
+
+<p>___________________________________________________________________________________________________</p>
+
+
+<!-- IFRAME
+
+    <iframe> (inline frame element)
+    Elemento que vai trazer um conteúdo externo 
+        Pode fazer com vídeo, audio, mapa, etc
+
+        Atributos
+        -src (de onde vai vir esse conteúdo)
+        -height
+        -width
+        -title (scessibilidade)
+        -allowfullscreen (permitir que fique em tela cheia)
+        -frameborder (se vai ter borda ou nao)
+-->
+<iframe src="https://urlaqui.com" frameborder="0"></iframe>
+
+<!-- Em caso de vídeo, o próprio youtube disponibiliza um iframe: ir em compartilhar e incorporar, copiar e colar no código -->
+<iframe 
+    width="560" 
+    height="315" 
+    src="https://www.youtube.com/embed/A296HvzvGGM" 
+    title="All I Want - Kodaline, The Voice France 2016" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen>
+</iframe>
+
+<!-- 
+    -Atributo Allow:
+        gyroscope: se girar o dispositivo, irá manter as configuraçoes do iframe
+        picture-in-picture: permitir que o vídeo fique pequeno no canto inferior
+-->
+
+<!-- Utilizando mapa com <iframe> 
+    Entrar no google maps e escolher a localização, ir em "compartilhar ou incorporar mapa", copiar e colar no código
+-->
+<iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60629.03908990629!2d-43.637350597948824!3d-18.24137841834462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xaeb9ab8f0c38ff%3A0x20f6a7aa673dbbe1!2sDiamantina%2C%20MG%2C%2039100-000!5e0!3m2!1spt-BR!2sbr!4v1646687667669!5m2!1spt-BR!2sbr" 
+    width="600" 
+    height="450" 
+    style="border:0;" 
+    allowfullscreen 
+    loading="lazy">
+</iframe>
+
+<p>___________________________________________________________________________________________________</p>
+
+
+<!-- IMAGENS
+    
+    <img>
+
+    -src (onde encontrar a imagem)
+    -alt (o que aparecer se não aparecer a imagem)
+    -title (aparece quando o mouse descansar sobre a imagem)
+    -width (se colocar os dois atributos, pode esticar a imagem)
+    -height
+    -adicionar link
+
+    *apenas usar imagens livres de direitos autorais
+-->
+
+<a href="https://google.com">
+    <img 
+    src="https://source.unsplash.com/random" 
+    alt="Imagem de title"
+    title="Colocar um título na imagem"
+    width="150px"
+>
+</a>
+
+<p>___________________________________________________________________________________________________</p>
+
+
+<!-- BACKGROUND
+    
+    background-image
+
+    -com a tag style (via css)
+    -somente para estilo
+    -não é semântico e falta significado
+-->
+
+<p style="background-image: url(./files/valorant.jpg);">Imagem</p>
+
+<p>___________________________________________________________________________________________________</p>
+
+
+<!-- Criando títulos visíveis para as imagens
+
+    <figure> e <figcaption>
+-->
+
+<a href="https://google.com">
+    <figure>
+            
+            <img 
+            src="https://source.unsplash.com/random" 
+            alt="Imagem de title"
+            title="Colocar um título na imagem"
+            height="250px"
+            >
+        
+        <figcaption>Colocar um título na imagem</figcaption>
+    </figure>
+</a>
+
+<p>___________________________________________________________________________________________________</p>
+
+
+<!-- 
+    SVG <svg>
+
+    É uma marcaçao, estilo html, mas não é para textos, e sim para fazer imagens.
+    Possuimos elementos para gerar formas.
+
+    Para entender melhor 
+    - Imagem rasterizada (está pixelada: construindo a imagem via pixels)
+    - Imagem vetorizada (feita via algoritmo)
+
+    Benefícios da imagem VETORIZADA
+    - mais leve 
+    - mais detalhada 
+    - maior acessibilidade e SEO (pois é toda escrita via texto)
+    - pode ser editada via CSS ou atributos html
+
+    Desvantagens da imagem VETORIZADA
+    - pode ser mais complicado de trabalhar 
+    - quanto mais complexa a imagem, mais trabalho para o navegador
+    - navegadores mais antigos não possuem suporte a essa tag
+
+    Para fotografias, ainda prefira usar imagens rasterizadas.
+
+ -->
+<svg width="100" height="100">
+    <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+</svg>
+
+<!-- https://www.figma.com 
+    
+    site para vetorizar imagens e copiar seus códigos
+-->
+
+<!-- 
+    Colocar o SVG diretamente na página: diminui as chamadas http que o site tem q fazer para arquivos de fora
+        Porém, se tiver que repetir as figuras, isso poluirá muito o código e deixará o documento muito maior.
+
+    Para usar um SVG de fora:
+        -  Criar um arquivo svg e colocar o código do desenho vetorizado (./files/ball.svg) 
+        - Criar uma tag <img> no HTML puxando o svg do arquivo criado
+-->
+
+<img src="./files/ball.svg" alt="Bola">
+
+
+<p>___________________________________________________________________________________________________</p>

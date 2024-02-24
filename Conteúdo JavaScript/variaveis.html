@@ -1,0 +1,104 @@
+ <!-- Variáveis
+
+    Abrem "espaços" na memória que recebem dados
+    -Nomes simbólicos para receber algum valor
+    -Atalhos de código
+    -Identificadores
+    -3 palavras reservadas para criar uma variável
+        * var (varia entre as strings)
+        * let (considera a ultima string)
+        * const (só aceita 1 valor, 1 string)
+-->
+
+<script>
+
+    //var
+    var clima = "Quente"
+    clima = "Frio"
+    console.log(clima)
+
+</script>
+
+<!-- 
+    O JS é uma linguagem fracamente tipada e dinâmica
+    
+    (o tipo é difinido a partir do momento que atribui um valor à variável)
+    -Variáveis não precisam ter um tipo previamente definido
+    -Podemos mudar o conteúdo da variável (e consequentemente o tipo)
+
+ -->
+
+
+<!-- SCOPE
+    *  Escopo: determina a visibilidade de alguma variável no JS
+     (nem sempre as variaveis estão visíveis para o código do JS)
+
+ BLOCK STATEMENT
+    Declaração de bloco (dentro de chaves : {})
+    Toda vez que cria um block statement, cria um novo scope
+    
+-->
+<script>
+    {
+        let x = 0
+        console.log(x)
+    }
+</script>
+
+<!-- ## scope VAR
+        é global (tudo que está executando na aplicação, tudo que está dentro da tag script )
+        e também global (tudo que está dentro das chaves)
+-->
+    <script>
+        console.log('> existe x antes do bloco?', x)
+        {
+            var x = 0
+        }
+        console.log('> existe x depois do bloco?', x)
+    </script>
+    <!-- ou: -->
+    <script>
+        var x = 0
+        console.log('> existe x antes do bloco?', x)
+    </script>
+
+<!-- ## scope LET e CONST
+        são locais e só funcionam no escopo onde foi criada
+        (dentro das chaves)
+-->
+<script>
+    {
+        let y = 0
+        console.log('> existe y antes do bloco?', y)
+    }
+
+    {
+        const y = 0
+        console.log('> existe y', y)
+    }
+</script>
+
+<!-- Evitar o uso do scope VAR -->
+
+
+<!-- NOMEANDO VARIÁVEIS
+    * JS é case-sensitive (sensível ao caso) : maiúsculas e minúsculas fazem diferença
+    * JS aceita a cadeia de caracteres Unicode : pode colocar aspas e acentuação
+
+ -Posso:
+    -Iniciar com esses caracteres especiais: $ _
+    -Iniciar com letras 
+    -Colocar acentos
+    -Letras maiúsculas e minúsculas fazem diferença
+
+ -Não posso:
+    -Iniciar com números
+    -Colocar espaços vazios no nome
+
+ -Ideal:
+    -Criar nomes que fazem sentido
+    -Que explique o que a variável é ou faz
+    -camelCase (ex: checkIfNameExists)
+    -snake_case (ex: check_if_name_exists)
+    -Escrever em ingles
+-->
